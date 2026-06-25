@@ -43,7 +43,7 @@ class Solution {
             int mid=(low+high)/2;
             if(nums[mid]===target){
                 ans=mid;
-                hih=mid-1;
+                high=mid-1;
             }
             else if(arr[mid]<target){
                 low=mid+1;
