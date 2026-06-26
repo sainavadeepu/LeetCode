@@ -29,33 +29,30 @@ using namespace std;
 class Solution {
 public:
      int sumby(vector<int> & arr, int div){
-        int n=arr.size();
-        for(int i=0;i<n;i++){
-            int ans+=ceil((double)a[i]/(double(div)));
-
+        int sum=0;
+        for(int a:arr){
+            sum+=ceil((double)a/(double)(div));
         }
-        return ans;
-
-        i
+        return sum;
        
-
     }
     int smallestDivisor(vector<int>& arr, int threshold) {
-        int low=1;
-        int high=*max_element(arr.begin(),arr.end());
-        while(low<=high){
-            int mid=(low+high)/2;
-            int sum=sumby(arr,mid);
+       int low=1;
+       int high=*max_element(arr.begin(),arr.end());
+       int ans=high;
 
-            if(sum<=threshold){
-                ans=mid;
-                high=mid-1;
-            }else{
-                low=mid+1;
-            }
+       while(low<=high){
+        int mid=(low+high)/2;
+        int sum=sumby(nums,mid);
 
+        if(sum<=threshold){
+            ans=mid;
+            high=mid-1;
+        }else{
+            low=mid+1;
         }
-        return ans;
+       }
+       return ans;
         
             
         
